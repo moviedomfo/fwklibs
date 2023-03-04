@@ -1,0 +1,23 @@
+{
+  "name": "fwklibs",
+  "version": "1.0.0",
+  "description": "Common librery with helpers and components modularized by",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moviedomfo/fwklibs.git"
+  },
+  "keywords": [
+    "typescript",
+    "commonDevFunctions"
+  ],
+  "author": "moviedomfo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moviedomfo/fwklibs/issues"
+  },
+  "homepage": "https://github.com/moviedomfo/fwklibs#readme"
+}
