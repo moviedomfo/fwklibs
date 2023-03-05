@@ -1,14 +1,13 @@
 {
-  "name": "fwklibs",
+  "name": "fwk-libs",
   "version": "1.0.0",
-  "description": "Common librery with helpers and components modularized by",
+  "description": "Common library with helpers and components modularized by category",
   "main": "index.ts",
   "scripts": {
     "dev_": "ts-node ./src/index.ts",
     "dev": "ts-node -r tsconfig-paths/register ./src/index.ts",
     "build": "babel src --extensions \".ts,.js\" -d dist --copy-files",
-    "start": "npm run build && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && node dist/index.js"
   },
   "repository": {
     "type": "git",
