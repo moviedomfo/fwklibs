@@ -16,7 +16,7 @@ They are helpers that abstract common problems that the developer faces over tim
 
 ### Installation
 
-    ```console
+    ```
       npm install dayjs --save
     ```
 
@@ -34,6 +34,6 @@ Common functions to help us tu iteract with files
 
 ## Params validators
 
-Functosns that allow us perform validatoions and parse diferent data typs
+Functions that allow us perform validatoions and parse diferent data typs
 
 

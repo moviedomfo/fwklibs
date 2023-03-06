@@ -1,6 +1,6 @@
 {
   "name": "fwk-libs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Common library with helpers and components modularized by category",
   "main": "index.ts",
   "scripts": {
