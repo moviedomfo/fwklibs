@@ -14,10 +14,6 @@ They are helpers that abstract common problems that the developer faces over tim
 
 ## Getting Started
 
-```console
-    npm install fwk-libs --save
-```
-
 ### Installation
 
     ```console
@@ -40,6 +36,4 @@ Common functions to help us tu iteract with files
 
 Functosns that allow us perform validatoions and parse diferent data typs
 
-## It allows us
 
-In development state: cantains components thas helps us with error handling
