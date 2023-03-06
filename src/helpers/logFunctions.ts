@@ -1,4 +1,6 @@
-import { FileFunctions, DateFunctions } from './';
+import { DateFunctions } from "./dateFunctions";
+import { FileFunctions } from "./fileFunctions";
+
 const colors = require('colors');
 /** */
 export class LogFunctions {

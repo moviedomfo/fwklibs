@@ -1,12 +1,14 @@
 {
   "name": "fwk-libs",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Common library with helpers and components modularized by category",
   "main": "index.ts",
   "scripts": {
-    "dev_": "ts-node ./src/index.ts",
+    "dev_": "ts-node ./src/index.ts ",
     "dev": "ts-node -r tsconfig-paths/register ./src/index.ts",
-    "build": "babel src --extensions \".ts,.js\" -d dist --copy-files",
+    "build": "npm run clean && babel src --extensions \".ts,.js\" -d dist --copy-files && npm run copy",
+    "clean": "rimraf ./dist",
+    "copy": "copy package.json dist",
     "start": "npm run build && node dist/index.js"
   },
   "repository": {
