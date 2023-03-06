@@ -17,7 +17,7 @@ They are helpers that abstract common problems that the developer faces over tim
 ### Installation
 
     ```
-      npm install dayjs --save
+        npm install fwk-libs --save
     ```
 
 ## DateFunctions
@@ -35,5 +35,3 @@ Common functions to help us tu iteract with files
 ## Params validators
 
 Functions that allow us perform validatoions and parse diferent data typs
-
-
