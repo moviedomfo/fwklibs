@@ -4,7 +4,7 @@
     "target": "es5",
     "module": "commonjs",
     "declaration": true, // for working with .d.ts files for JavaScript files you
-    "declarationDir": "./types", //root directory for where declaration files are emitted
+    //"declarationDir": "./types", //root directory for where declaration files are emitted
     "esModuleInterop": true,
     // "moduleResolution": "node",
     // "noImplicitAny": false,

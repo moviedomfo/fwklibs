@@ -1,20 +1,24 @@
 {
   "name": "fwk-libs",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Common library with helpers and components modularized by category",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "ts-node -r tsconfig-paths/register ./src/index.ts",
     "build:js": "npm run clean && babel src --extensions \".ts,.js\" -d dist --copy-files && npm run copy",
-    "build": "tsc && copy package.json dist && copy readme.md dist",
+    "build:old": "tsc && copy package.json dist && copy readme.md dist",
     "clean": "rimraf ./dist",
     "cp": "copy package.json dist && copy readme.md dist",
     "start": "npm run build && node dist/index.js",
     "prepare": "npm run build",
     "preversion": "npm run lint",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "build": "npm run clean && prettier --write src/ && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
   },
   "repository": {
     "type": "git",
@@ -25,7 +29,7 @@
     "commonDevFunctions"
   ],
   "files": [
-    "dist/**/*"
+    "dist"
   ],
   "author": "moviedomfo",
   "license": "ISC",

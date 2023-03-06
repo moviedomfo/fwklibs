@@ -34,4 +34,4 @@ Common functions to help us tu iteract with files
 
 ## Params validators
 
-Functions that allow us perform validatoions and parse diferent data typs
+Functions that allow us perform validatoions and parse diferent data types
