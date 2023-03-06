@@ -11,7 +11,7 @@ export class DateFunctions {
     if (dateString) {
       f = new Date(dateString);
 
-      return f; //new Date(dateString);
+      return f;
     } else {
       return null;
     }
@@ -20,10 +20,10 @@ export class DateFunctions {
    *  Coinvierte fecha local y retorna a formato ISO
    * '2019-01-25T02:00:00.000Z'
    */
-  public static getTime_Iso(): String {
+  public static getTime_Iso(): string {
     dayjs().locale('es');
 
-    let d = dayjs().toISOString();
+    const d = dayjs().toISOString();
 
     return d;
   }
@@ -33,7 +33,7 @@ export class DateFunctions {
    */
   public static getTime() {
     dayjs().locale('es');
-    let d = dayjs().format('DD/MM/YYYY h:mm A');
+    const d = dayjs().format('DD/MM/YYYY h:mm A');
     return d;
   }
 
@@ -41,7 +41,7 @@ export class DateFunctions {
    * Return prefix based on current date
    * @returns  yyyymmdd_ prefix
    */
-  public static getFileNamePrefix(): String {
+  public static getFileNamePrefix(): string {
     const d = dayjs().format('YYYYMMDD_');
     return d;
   }
@@ -51,9 +51,9 @@ export class DateFunctions {
    * Generally used when we put prefixed in monthly files
    * @returns   e.g.  '2023/06/10' --> 010610
    */
-  public static getPeriodo_01MMyyyy(): String {
+  public static getPeriodo_01MMyyyy(): string {
     const dt = dayjs().format('01MMyyyy');
-    //return 01032020-
+
     return dt;
   }
   /* Retorna 2021_04 */
@@ -71,7 +71,7 @@ export class DateFunctions {
    *  Get the formatted date according to the 'MM' pattern.
    * @returns e.g.  '2023/06/10' --> 06
    */
-  public static getMonth_MM(): String {
+  public static getMonth_MM(): string {
     const dt = dayjs().format('MM');
     return dt;
   }
@@ -80,8 +80,8 @@ export class DateFunctions {
    * Get the formatted date according to the 'dd' pattern.
    * @returns e.g.  '2023/06/10' --> 10
    */
-  public static getDay_dd(): String {
-    let dt = dayjs().format('DD');
+  public static getDay_dd(): string {
+    const dt = dayjs().format('DD');
     return dt;
   }
 
@@ -89,8 +89,7 @@ export class DateFunctions {
    * Get ISO 8601 string fromm  date pased as string
    */
   public static getDateFrom_yyymmyyy_toSQLDate(date: string): string {
-    let convertida = dayjs(date).toISOString();
-    //let convertida = dayjs(date + "T13:00:00.00").format('YYYY-MM-DDTHH:mm:ssZ[Z]') ;
+    const convertida = dayjs(date).toISOString();
     return convertida;
   }
 }

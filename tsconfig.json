@@ -1,16 +1,18 @@
 {
-  "extends": "@tsconfig/node14/tsconfig.json",
+  // "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
-    "target": "ES6",
+    "target": "es5",
     "module": "commonjs",
+    "declaration": true, // for working with .d.ts files for JavaScript files you
+    "declarationDir": "./types", //root directory for where declaration files are emitted
     "esModuleInterop": true,
-    "moduleResolution": "node",
-    "noImplicitAny": false,
-    "sourceMap": true,
-    "noLib": false,
-    "allowJs": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "skipLibCheck": true,
+    // "moduleResolution": "node",
+    // "noImplicitAny": false,
+    // "sourceMap": true,
+    // "noLib": false,
+    // "allowJs": true,
+    // "suppressImplicitAnyIndexErrors": true,
+    // "skipLibCheck": true,
     "outDir": "dist",
     "baseUrl": "./",
     "paths": {
@@ -24,12 +26,5 @@
     "typeRoots": ["./node_modules/@types"]
   },
   "include": ["src/**/*"],
-  "exclude": [
-    "node_modules",
-    "**/build",
-    "**/dist",
-    "**/*.md",
-    "**/rollup.config.js",
-    "src/**/*.test.ts"
-  ]
+  "exclude": ["node_modules", "**/dist", "src/**/*.test.ts"]
 }

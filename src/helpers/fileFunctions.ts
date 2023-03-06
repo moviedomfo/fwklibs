@@ -1,12 +1,10 @@
-
 import * as fs from 'fs';
 import { readFileSync } from 'fs';
 import * as path from 'path';
 /**
- * 
+ *
  */
 export class FileFunctions {
-
   /** */
   public static WriteFile(fileName, data): Promise<void> {
     return new Promise<void>((resolve, reject) => {
@@ -37,6 +35,7 @@ export class FileFunctions {
   public static OpenFile(fileName: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       const json = fs.readFileSync(fileName, 'utf8');
+      // tslint:disable-next-line: no-console
       console.log(json);
       resolve(json);
     });
@@ -48,5 +47,4 @@ export class FileFunctions {
   //   throw new Error("not Implemented")
 
   // });
-
 }

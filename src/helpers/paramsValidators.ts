@@ -3,7 +3,12 @@ export const isNullOrEmpty = (value: string): boolean => {
   const isNull = value === '' || value === undefined || value === null;
   return isNull;
 };
-/**check if is a corret e-mail */
+
+/**
+ * check if is a corret e-mail
+ * @param mail
+ * @returns
+ */
 export const validateMail = (mail: string): boolean => {
   /* eslint-disable-next-line */
   const regex =
@@ -11,12 +16,16 @@ export const validateMail = (mail: string): boolean => {
   const isValid = regex.test(mail);
   return isValid;
 };
-/** Convert strings as  'true', 'TRUE' , 'false', 'yes','0' and so on to boolean*/
+
+/**
+ *  Convert strings as  'true', 'TRUE' , 'false', 'yes','0' and so on to boolean
+ * @param stringValue
+ * @returns
+ */
 export const parseBoolean = (stringValue: string): boolean => {
   // const bool_value = value.toLowerCase() == 'true' ? true : false;
   // return bool_value;
 
- 
   switch (stringValue?.toLowerCase()?.trim()) {
     case 'true':
     case 'yes':
@@ -33,13 +42,16 @@ export const parseBoolean = (stringValue: string): boolean => {
     default:
       return JSON.parse(stringValue);
   }
-  
 };
 
-/** */
-export const parse_Int = (string_as_number: string):  number | undefined => {
-  if ((string_as_number || '').trim()) {
-    return parseInt((string_as_number || '').trim(), 10);
+/**
+ * Convert string to int
+ * @param string as number
+ * @returns number
+ */
+export const parseToInt = (stringAsNumber: string): number | undefined => {
+  if ((stringAsNumber || '').trim()) {
+    return parseInt((stringAsNumber || '').trim(), 10);
   }
   return undefined;
-}
+};

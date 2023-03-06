@@ -2,9 +2,10 @@ export class ExeptionFunctions {
   public static GetMessageError(error): string {
     let message = error.message;
 
-    if (error.name === "SequelizeDatabaseError") {
+    if (error.name === 'SequelizeDatabaseError') {
       if (error.message) return error.message;
 
+      // tslint:disable-next-line: ban-types
       const errors: [String] = error.parent.errors as [String];
       errors.forEach((element) => {
         message += element;
@@ -12,7 +13,7 @@ export class ExeptionFunctions {
       return message;
     }
 
-    if (error.response) message = message.concat(error.response.data.Message, "\n");
+    if (error.response) message = message.concat(error.response.data.Message, '\n');
     return message;
   }
 }
