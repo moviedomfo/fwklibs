@@ -1,4 +1,3 @@
-// var colors = require("colors");
 import dayjs from 'dayjs';
 export class DateFunctions {
   /**
@@ -16,23 +15,23 @@ export class DateFunctions {
       return null;
     }
   }
+
   /**
-   *  Coinvierte fecha local y retorna a formato ISO
-   * '2019-01-25T02:00:00.000Z'
+   * Convert current local date to ISO
+   * @returns '2019-01-25T02:00:00.000Z'
    */
   public static getTime_Iso(): string {
-    dayjs().locale('es');
-
+    
     const d = dayjs().toISOString();
 
     return d;
   }
+
   /**
    * Retrive current date time  in spesific format
    * @returns DD/MM/YYYY h:mm A
    */
   public static getTime() {
-    dayjs().locale('es');
     const d = dayjs().format('DD/MM/YYYY h:mm A');
     return d;
   }
