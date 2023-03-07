@@ -4,7 +4,6 @@ import { FileFunctions } from './fileFunctions';
 import colors from 'colors';
 /** */
 export class LogFunctions {
-
   /**
    * Append log message inside a file with the following pathern name YYYYMMDD_logs.txt
    * Shows yellow message color in console
@@ -24,10 +23,10 @@ export class LogFunctions {
   }
 
   /**
-   * Append log message inside a file with the following pathern name 
+   * Append log message inside a file with the following pathern name
    * YYYYMMDD_logs.txt
    * Shows red message color in console
-   * @param message 
+   * @param message
    */
   public static LogError(message: string): void {
     const logFileName = DateFunctions.getFileNamePrefix() + 'logs.txt';
@@ -64,8 +63,6 @@ export class LogFunctions {
    */
   public static Log_Blue_Message_Console(message: string): void {
     // tslint:disable-next-line: no-console
-    console.log(colors.blue( message));
+    console.log(colors.blue(message));
   }
-
- 
 }

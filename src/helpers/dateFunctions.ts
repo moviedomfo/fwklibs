@@ -21,7 +21,6 @@ export class DateFunctions {
    * @returns '2019-01-25T02:00:00.000Z'
    */
   public static getTime_Iso(): string {
-    
     const d = dayjs().toISOString();
 
     return d;

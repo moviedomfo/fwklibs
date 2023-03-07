@@ -4,7 +4,6 @@ import es = require('dayjs/locale/es');
 import fr = require('dayjs/locale/fr');
 import de = require('dayjs/locale/de');
 
-
 const dd = DateFunctions.getDay_dd();
 
 LogFunctions.Log_Blue_Message_Console(

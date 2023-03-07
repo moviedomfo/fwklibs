@@ -1,6 +1,6 @@
 {
   "name": "fwk-libs",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Common library with helpers and components modularized by category",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -12,7 +12,7 @@
     "build:old": "tsc && copy package.json dist && copy readme.md dist",
     "clean": "rimraf ./dist",
     "cp": "copy package.json dist && copy readme.md dist",
-     "prepare": "npm run build",
+    "prepare": "npm run build",
     "preversion": "npm run lint",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
