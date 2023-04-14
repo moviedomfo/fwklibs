@@ -1,7 +1,7 @@
-import { DateFunctions } from './dateFunctions';
-import { FileFunctions } from './fileFunctions';
+import {DateFunctions} from "./dateFunctions";
+import {FileFunctions} from "./fileFunctions";
 
-import colors from 'colors';
+import colors from "colors";
 /** */
 export class LogFunctions {
   /**
@@ -10,9 +10,9 @@ export class LogFunctions {
    */
   public static Log(message: string): void {
     try {
-      const logFileName = DateFunctions.getFileNamePrefix() + 'logs.txt';
-      let log = DateFunctions.getTime() + ' INFO ';
-      log = log.concat(message, '\n');
+      const logFileName = DateFunctions.getFileNamePrefix() + "logs.txt";
+      let log = DateFunctions.getTime() + " INFO ";
+      log = log.concat(message, "\n");
       FileFunctions.AppendFile(logFileName, log);
       // tslint:disable-next-line: no-console
       console.log(colors.yellow(log));
@@ -29,9 +29,9 @@ export class LogFunctions {
    * @param message
    */
   public static LogError(message: string): void {
-    const logFileName = DateFunctions.getFileNamePrefix() + 'logs.txt';
-    let log = DateFunctions.getTime_Iso() + ' ERROR ';
-    log = log.concat(message, '\n');
+    const logFileName = DateFunctions.getFileNamePrefix() + "logs.txt";
+    let log = DateFunctions.getTime_Iso() + " ERROR ";
+    log = log.concat(message, "\n");
     // tslint:disable-next-line: no-console
     console.log(colors.red(log));
     FileFunctions.AppendFile(logFileName, log);
@@ -39,7 +39,7 @@ export class LogFunctions {
 
   public static GetError(error): string {
     let message = error.message;
-    if (error.response) message = message.concat(error.response.data.Message, '\n');
+    if (error.response) message = message.concat(error.response.data.Message, "\n");
     return message;
   }
   /** */
@@ -47,7 +47,7 @@ export class LogFunctions {
     this.LogError(this.GetError(error));
 
     // tslint:disable-next-line: no-console
-    console.log(colors.red(DateFunctions.getTime_Iso() + ' ' + message + '  ' + this.GetError(error)));
+    console.log(colors.red(DateFunctions.getTime_Iso() + " " + message + "  " + this.GetError(error)));
   }
 
   /**
@@ -55,7 +55,7 @@ export class LogFunctions {
    */
   public static Log_ISO_Message_Console(message: string): void {
     // tslint:disable-next-line: no-console
-    console.log(colors.blue(DateFunctions.getTime_Iso() + ' ' + message));
+    console.log(colors.blue(DateFunctions.getTime_Iso() + " " + message));
   }
 
   /**

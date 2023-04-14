@@ -1,6 +1,6 @@
 /** returns true if is null or empty */
 export const isNullOrEmpty = (value: string): boolean => {
-  const isNull = value === '' || value === undefined || value === null;
+  const isNull = value === "" || value === undefined || value === null;
   return isNull;
 };
 
@@ -11,8 +11,7 @@ export const isNullOrEmpty = (value: string): boolean => {
  */
 export const validateMail = (mail: string): boolean => {
   /* eslint-disable-next-line */
-  const regex =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const isValid = regex.test(mail);
   return isValid;
 };
@@ -27,14 +26,14 @@ export const parseBoolean = (stringValue: string): boolean => {
   // return bool_value;
 
   switch (stringValue?.toLowerCase()?.trim()) {
-    case 'true':
-    case 'yes':
-    case '1':
+    case "true":
+    case "yes":
+    case "1":
       return true;
 
-    case 'false':
-    case 'no':
-    case '0':
+    case "false":
+    case "no":
+    case "0":
     case null:
     case undefined:
       return false;
@@ -50,8 +49,8 @@ export const parseBoolean = (stringValue: string): boolean => {
  * @returns number
  */
 export const parseToInt = (stringAsNumber: string): number | undefined => {
-  if ((stringAsNumber || '').trim()) {
-    return parseInt((stringAsNumber || '').trim(), 10);
+  if ((stringAsNumber || "").trim()) {
+    return parseInt((stringAsNumber || "").trim(), 10);
   }
   return undefined;
 };

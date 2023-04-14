@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 export class DateFunctions {
   /**
    * Gets Date from string
@@ -31,7 +31,7 @@ export class DateFunctions {
    * @returns DD/MM/YYYY h:mm A
    */
   public static getTime() {
-    const d = dayjs().format('DD/MM/YYYY h:mm A');
+    const d = dayjs().format("DD/MM/YYYY h:mm A");
     return d;
   }
 
@@ -40,7 +40,7 @@ export class DateFunctions {
    * @returns  yyyymmdd_ prefix
    */
   public static getFileNamePrefix(): string {
-    const d = dayjs().format('YYYYMMDD_');
+    const d = dayjs().format("YYYYMMDD_");
     return d;
   }
 
@@ -50,7 +50,7 @@ export class DateFunctions {
    * @returns   e.g.  '2023/06/10' --> 010610
    */
   public static getPeriodo_01MMyyyy(): string {
-    const dt = dayjs().format('01MMyyyy');
+    const dt = dayjs().format("01MMyyyy");
 
     return dt;
   }
@@ -61,7 +61,7 @@ export class DateFunctions {
    * @returns e.g.  '2023/06/10' --> 06
    */
   public static getPeriodo_YYYY_MM(): string {
-    const dt = dayjs().format('YYYY_MM');
+    const dt = dayjs().format("YYYY_MM");
     return dt;
   }
 
@@ -70,7 +70,7 @@ export class DateFunctions {
    * @returns e.g.  '2023/06/10' --> 06
    */
   public static getMonth_MM(): string {
-    const dt = dayjs().format('MM');
+    const dt = dayjs().format("MM");
     return dt;
   }
 
@@ -79,7 +79,7 @@ export class DateFunctions {
    * @returns e.g.  '2023/06/10' --> 10
    */
   public static getDay_dd(): string {
-    const dt = dayjs().format('DD');
+    const dt = dayjs().format("DD");
     return dt;
   }
 

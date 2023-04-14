@@ -1,6 +1,6 @@
-import * as fs from 'fs';
-import { readFileSync } from 'fs';
-import * as path from 'path';
+import * as fs from "fs";
+import {readFileSync} from "fs";
+import * as path from "path";
 /**
  *
  */
@@ -34,7 +34,7 @@ export class FileFunctions {
   /** */
   public static OpenFile(fileName: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
-      const json = fs.readFileSync(fileName, 'utf8');
+      const json = fs.readFileSync(fileName, "utf8");
       // tslint:disable-next-line: no-console
       console.log(json);
       resolve(json);
