@@ -17,6 +17,6 @@ jobs:
       - run: yarn add global rimraf
       - run: yarn build:prod
         env:
-          NODE_AUTH_TOKEN: 'https://registry.npmjs.org'
+          NODE_AUTH_TOKEN: ${{ secrets.FWK_LIBS_AUTH_TOKEN }}
       - run: npm publish
     
