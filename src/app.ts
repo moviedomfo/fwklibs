@@ -12,7 +12,6 @@ LogFunctions.Log_Blue_Message_Console(`-----------------------------------------
 // console.log(` DateFunctions.getDay_dd : ${dd}`);
 
 dayjs.locale(fr);
-
 const dia = dayjs().format("dddd");
 console.log(dia);
 console.log("---------------------------------------dddd MMMM YYYY ---------------------------------------");
