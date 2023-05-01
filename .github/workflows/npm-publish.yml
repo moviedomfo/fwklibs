@@ -1,34 +1,22 @@
-name: Publicar en NPM
-
+name: Publish Package to npmjs
 on:
   push:
     branches:
       - master
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-      - name: Install rimraf
-        run: yarn global add rimraf
-      - name: Install Dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build:prod
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-      - run: npm publish
+          node-version: "16.x"
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn install
+      - run: yarn global add rimraf
+      - run: yarn build:prod
         env:
-          NODE_AUTH_TOKEN: https://registry.npmjs.org/:_authToken' $FWK_LIBS_AUTH_TOKEN;
+          NODE_AUTH_TOKEN: ${{ secrets.FWK_LIBS_AUTH_TOKEN }}
+      - run: npm publish
+    
