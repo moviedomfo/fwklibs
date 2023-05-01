@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
+          registry-url: https://registry.npmjs.org
       - name: Install rimraf
         run: yarn global add rimraf
       - name: Install Dependencies
