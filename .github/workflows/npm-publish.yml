@@ -18,7 +18,10 @@ jobs:
           node-version: 16
       - name: Install rimraf
         run: yarn global add rimraf
-      - run: yarn install
+      - name: Install Dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
 
   publish-npm:
     needs: build
@@ -30,8 +33,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: yarn install
-      - name: Install rimraf
-        run: yarn global add rimraf
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: https://registry.npmjs.org/:_authToken' $FWK_LIBS_AUTH_TOKEN;
