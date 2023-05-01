@@ -6,9 +6,6 @@ on:
 jobs:
   build-publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -20,4 +17,4 @@ jobs:
       - run: yarn build
       - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
