@@ -1,6 +1,6 @@
 import {AppError} from "./AppError";
 import {Request, Response, NextFunction} from "express";
-import { ExeptionFunctions } from "src/helpers/ExeptionFunctions";
+import {ExeptionFunctions} from "src/helpers/ExeptionFunctions";
 
 /*
  //These error-handling middleware functions are attached to the app instance after the route handler functions have been defined.

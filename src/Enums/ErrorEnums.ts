@@ -13,7 +13,6 @@ export enum ErrorCodeEnum {
   AUTH_REFRESH_TOKEN_EXPIRED = "201",
   AUTH_JWT_TOKEN_REQUIRED = "202",
   AUTH_JWT_TOKEN_EXPIRED = "203",
-  
 
   /**
    * Connection timeout . Server es busy or not exist
