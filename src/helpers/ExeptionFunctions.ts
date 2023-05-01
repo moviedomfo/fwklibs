@@ -27,13 +27,13 @@ export class ExeptionFunctions {
     /** */
     if (error.name === "SequelizeConnectionError") {
       if (error.original?.code === "ETIMEOUT") {
-        message = "Error de conexión al servidor de base de datos .-";
+        message = "Error connecting to the database server.- ";
         errorCode = ErrorCodeEnum.SEQUALIZE_TIMEOUT;
       }
     }
     if (!message && error.name === "SequelizeAccessDeniedError") {
       if (error.original?.code === "ELOGIN") {
-        message = "Error de conexión de permisos contra el servidor de base de datos .-";
+        message = "Permissions connection error against the database server.- .-";
         errorCode = ErrorCodeEnum.SEQUALIZE_ELOGIN;
       }
     }

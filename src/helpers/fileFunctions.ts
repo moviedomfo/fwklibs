@@ -40,11 +40,48 @@ export class FileFunctions {
       resolve(json);
     });
   }
+  public static async Move(source: string, dest: string): Promise<any> {
+    return new Promise<any>(async (resolve, reject) => {
+      try {
+        fs.rename(source, dest, (err) => {
+          if (err) {
+            FileFunctions.MoveLinux(source, dest);
+          }
 
+          resolve("Moved");
+        });
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+  public static async MoveLinux(source: string, dest: string): Promise<any> {
+    return new Promise<any>(async (resolve, reject) => {
+      try {
+        fs.copyFile(source, dest, (err) => {
+          if (!err) resolve("");
+          else reject(err);
+        });
+        // Remove the old file
+        fs.unlink(source, (err) => {
+          if (!err) resolve("");
+          else reject(err);
+        });
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
   /** */
   // public static saveFile = (fileName: string, content: string) => ({
 
   //   throw new Error("not Implemented")
 
   // });
+
+  public static GetError(error: any): string {
+    let message = error.message;
+    if (error.response) message = message.concat(error.response.data.Message, "\n");
+    return message;
+  }
 }
