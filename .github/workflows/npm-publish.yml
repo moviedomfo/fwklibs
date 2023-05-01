@@ -16,8 +16,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install rimraf
-        run: npm install -g rimraf
       - run: yarn install
 
   publish-npm:
