@@ -6,22 +6,7 @@ on:
       - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Install rimraf
-        run: yarn global add rimraf
-      - name: Install Dependencies
-        run: yarn install
-      - name: Build
-        run: yarn build:prod
-
-  publish-npm:
-    needs: build
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,6 +14,13 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - name: Install rimraf
+        run: yarn global add rimraf
+      - name: Install Dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build:prod
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: https://registry.npmjs.org/:_authToken' $FWK_LIBS_AUTH_TOKEN;
+ 
