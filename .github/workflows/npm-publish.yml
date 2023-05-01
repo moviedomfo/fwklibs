@@ -16,5 +16,6 @@ jobs:
       - run: yarn global add rimraf
       - run: yarn build
       - run: npm publish --access public
+      - working-directory: fwklibs
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
