@@ -1,6 +1,6 @@
 {
   "name": "fwk-libs",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Common library with helpers and components modularized by category",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
