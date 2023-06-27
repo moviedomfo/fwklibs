@@ -54,3 +54,16 @@ export const parseToInt = (stringAsNumber: string): number | undefined => {
   }
   return undefined;
 };
+
+/**
+ * To format strings similar to String.Format in C#matear cadenas de manera similar a String.Format en C#.
+ * @param format  "Hello {0}, {1}?"
+ * @param args frase1, frase2, ...
+ * @returns Formated string
+ */
+export const formatString = (format: string, ...args: any[]): string => {
+  return format.replace(/{(\d+)}/g, (match, index) => {
+    const arg = args[index];
+    return typeof arg !== "undefined" ? arg : match;
+  });
+};
