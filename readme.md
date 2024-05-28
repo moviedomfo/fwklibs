@@ -17,7 +17,7 @@ They are helpers that abstract common problems that the developer faces over tim
 ### Installation
 
     ```
-        npm install fwk-libs --save
+        yarn add fwk-libs --save
     ```
 
 ## DateFunctions
