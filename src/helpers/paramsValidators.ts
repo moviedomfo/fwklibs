@@ -67,3 +67,28 @@ export const formatString = (format: string, ...args: any[]): string => {
     return typeof arg !== "undefined" ? arg : match;
   });
 };
+
+/**
+ *  Parse string to enum value
+ * @param enumType 
+ * @param value 
+ * @returns 
+ */
+export const parseEnum = <T>(enumType: T, value: string): T[keyof T] | undefined => {
+  const enumKey = Object.keys(enumType).find(key => key.toLowerCase() === value.toLowerCase());
+  if (enumKey !== undefined) {
+      return enumType[enumKey as keyof T];
+  }
+  return undefined;
+};
+
+/**
+ * Parse enum value tu respective text. similar to c# Enum.GetName
+ * @param enumType 
+ * @param value 
+ * @returns 
+ */
+export const getEnumKeyFromValue = <T>(enumType: T, value: number): string | undefined => {
+  const enumKey = Object.keys(enumType).find(key => enumType[key as keyof T] === value);
+  return enumKey;
+};

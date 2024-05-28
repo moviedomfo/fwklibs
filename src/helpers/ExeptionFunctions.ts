@@ -1,4 +1,5 @@
 import {ErrorCodeEnum, ErrorTypeEnum} from "src/Enums/ErrorEnums";
+import HttpStatusCode from "src/Enums/HttpStatusCode";
 import {AppError} from "src/ErrorHandle/AppError";
 
 export class ExeptionFunctions {
@@ -15,6 +16,20 @@ export class ExeptionFunctions {
     if ((error.name as string).startsWith("Kafka")) {
       appError = ExeptionFunctions.Parse_KafkaError(error);
     }
+
+    //Redis authentication required
+    if (error.message && error.message.startsWith("REDIS->")) {
+      appError = ExeptionFunctions.Parse_Redis(error);
+    }
+
+    // By default http status 500
+    let statusCode = error.statusCode || HttpStatusCode.INTERNAL_SERVER_ERROR;
+    if (appError?.statusCode) statusCode = appError.statusCode;
+
+    if (!appError) {
+      appError = new AppError(statusCode, ErrorCodeEnum.UNKNOWED, error.message, ErrorTypeEnum.TecnicalException);
+    }
+
     if (error.response) appError.message = appError.message.concat(error.response.data.Message, "\n");
 
     return appError;

@@ -5,6 +5,8 @@ export enum ErrorTypeEnum {
 }
 
 export enum ErrorCodeEnum {
+  UNKNOWED = "1",
+
   /** Generoing error id when some parameter does not come in the  requets.body. And no other
    * erroerror code was spesified by bussiness rules
    */

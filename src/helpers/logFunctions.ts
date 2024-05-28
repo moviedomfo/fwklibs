@@ -1,5 +1,5 @@
-import {DateFunctions} from "./dateFunctions";
-import {FileFunctions} from "./fileFunctions";
+import { DateFunctions } from "./DateFunctions";
+import { FileFunctions } from "./FileFunctions";
 
 import colors from "colors";
 /** */
