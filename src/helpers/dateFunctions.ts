@@ -1,4 +1,10 @@
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
+import utc from "dayjs/plugin/utc";
+import timezone from 'dayjs/plugin/timezone';
+dayjs.extend(isSameOrAfter);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 export class DateFunctions {
   /**
    * Gets Date from string
@@ -34,6 +40,8 @@ export class DateFunctions {
     const d = dayjs().format("DD/MM/YYYY h:mm A");
     return d;
   }
+
+
 
   /**
    * Return prefix based on current date
@@ -84,10 +92,93 @@ export class DateFunctions {
   }
 
   /**
-   * Get ISO 8601 string fromm  date pased as string
+   * 
+   * @param date 
+   * @returns 
    */
-  public static getDateFrom_yyyymmdd_toSQLDate(date: string): string {
-    const convertida = dayjs(date).toISOString();
+  public static getDate_To_UTC(date: Date): Date {
+    const d = new Date(date.toUTCString());
+    return d;
+  }
+
+
+
+  // /**
+  //  * Get ISO 8601 string fromm  date pased as string
+  //  */
+  // public static get_Format_to(date: string): string {
+  //   const convertida = dayjs(date).toISOString();
+  //   return convertida;
+  // }
+
+  /**
+   * Get string from formated 
+   * @param format  "yyyy-MM-dd" or "yyyy/MM/dd" or any other format
+   * @param date  
+   * @returns 
+   */
+  public static get_Format(format: string, date?: Date): string {
+    if (!date)
+      return '';
+    const convertida = dayjs(date).format(format);
     return convertida;
   }
+
+  /**
+   * La función isAfter se utiliza, por ejemplo para verificar si FechaVto es posterior a FechaEmision.
+   * 
+   * @param date1 
+   * @param date2 
+   * @returns return true if date1 > date2
+   */
+  public static isAfter(date1: Date | string, date2: Date | string) {
+    const fecha1 = dayjs(date1);
+    const fecha2 = dayjs(date2);
+
+    return fecha1.isAfter(fecha2);
+  }
+  public static isSameOrAfter(date1: Date | string, date2: Date | string) {
+    const fecha1 = dayjs(date1);
+    const fecha2 = dayjs(date2);
+
+    return fecha1.isSameOrAfter(fecha2);
+  }
+
+  /**
+   * 
+   * @param date1 
+   * @param date2 
+   * @returns 
+   */
+  public static isBefore(date1: Date | string, date2: Date | string) {
+    const fecha1 = dayjs(date1);
+    const fecha2 = dayjs(date2);
+
+    return fecha1.isBefore(fecha2);
+  }
+
+  /**
+   * Principio de los tiempos, su uso es poco común ya que se refiere a un año hace más de mil años en el calendario gregoriano.
+   * @returns 
+   */
+  public static getNullDate(): Date {
+    const nullDate: Date = dayjs("1017-01-01T00:00:00").toDate();
+    return nullDate;
+  };
+  /**
+ * Función que toma una fecha y la establece a la hora de inicio del día (00:00:00)
+ * @param date - Fecha en formato `Dayjs` o `string`
+ * @returns Fecha con la hora establecida al inicio del día
+ */
+  public static setToStartOfDay(date: Dayjs | string): Dayjs {
+    return dayjs(date).startOf('day');
+  };
+
+
+  public static convertToUTC(date: Date): Date {
+    if (!date)
+      return date;
+    //return dayjs(date).tz(SERVICE_TIMEZONE).utc().toDate();
+    return dayjs.utc(date).toDate();
+  };
 }

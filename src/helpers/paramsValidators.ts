@@ -1,8 +1,9 @@
 /** returns true if is null or empty */
-export const isNullOrEmpty = (value: string): boolean => {
-  const isNull = value === "" || value === undefined || value === null;
+export const isNullOrEmpty = (value: string | number): boolean => {
+  const isNull = value === "" || value === undefined || value === null || (typeof value === "number" && isNaN(value));
   return isNull;
 };
+
 
 /**
  * check if is a corret e-mail
@@ -77,7 +78,7 @@ export const formatString = (format: string, ...args: any[]): string => {
 export const parseEnum = <T>(enumType: T, value: string): T[keyof T] | undefined => {
   const enumKey = Object.keys(enumType).find(key => key.toLowerCase() === value.toLowerCase());
   if (enumKey !== undefined) {
-      return enumType[enumKey as keyof T];
+    return enumType[enumKey as keyof T];
   }
   return undefined;
 };
