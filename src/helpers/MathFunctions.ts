@@ -38,8 +38,23 @@ export class MathFunctions {
     return Math.floor(value * factor) / factor;
   }
 
+  /**
+   * Redondea un número hacia arriba a la cantidad de decimales especificada.
+   * 
+   * @param value - El número que se quiere redondear.
+   * @param decimals - La cantidad de decimales a la que se quiere redondear.
+   *                   Por ejemplo, 2 redondeará hacia arriba al segundo decimal.
+   * @returns El número redondeado hacia arriba.
+   * 
+   * @example
+   * ceilDecimal(12.3456, 2); // 12.35
+   * ceilDecimal(7.891, 1);   // 7.9
+   */
+  public static ceilDecimal(value: number, decimals: number): number {
+    const factor = Math.pow(10, decimals);
+    return Math.ceil(value * factor) / factor;
+  }
 
-  
   /**
  * Redondea un número a la potencia de 10 más cercana especificada.
  * 
@@ -90,4 +105,7 @@ export class MathFunctions {
     const factor = Math.pow(10, exp);
     return Math.ceil(value * factor) / factor;
   }
+
+
+
 }
